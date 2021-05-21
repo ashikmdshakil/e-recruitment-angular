@@ -1,0 +1,23 @@
+a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+
+  body {
+    background:#f0f0f0;
+}
+.picture{
+  max-width: 40px;
+            max-height: 40px; border-radius: 50%;
+}
+
+.notification{
+  overflow-x: hidden;
+  width: 450px;
+  overflow-y: scroll;
+  max-height: 550px;
+  
+}

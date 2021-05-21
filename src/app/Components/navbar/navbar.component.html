@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded">
+      <a routerLink = "/"><img src="../../../assets/erecruitmentlogo.jpg" height="40px" width="60px"></a>
+
+        <div class="ml-auto">
+         <!-- Profile -->
+          <div class="dropdown pmd-dropdown pmd-user-info" style="display: inline-block;">
+          <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+              <img *ngIf="!imageUrl" class="mr-2" class= "picture" src="../../assets/blank_image.png" alt="avatar" style="display: inline-block;">
+              <img *ngIf="imageUrl" class="mr-2" class= "picture" [src] = "imageUrl" alt="avatar" style="display: inline-block;">
+              <div class="media-body" style="display: inline-block; margin-left: 10px;">
+                  <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Hello Ashik</span>
+              </div>
+              <i class="material-icons md-light ml-2 pmd-sm" style="display: inline-block;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <a class="dropdown-item" href="javascript:void(0);">Edit Profile</a>
+              <a class="dropdown-item" href="javascript:void(0);">Dashboard</a>
+              <a class="dropdown-item" data-toggle="modal" href="javascript:void(0);" data-target="#exampleModal">Change Password</a>
+              <a class="dropdown-item" href="javascript:void(0);">Logout</a>
+          </ul>
+          </div>
+
+          <!-- Notifications -->
+
+        <!--  <div class="dropdown" style="display: inline-block;">
+          <a href="javascript:void(0);" data-toggle="dropdown" data-sidebar="true" aria-expanded="false"><i class="fa fa-bell" style="font-size:20px; color: skyblue;"></i><span style="margin-left: 5px;"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right notification">    
+            <div *ngFor = "let notification of notifications" >
+              <div class="row" style="margin-top: 5px;">
+                <div class="col-sm-2">
+                  <img class="picture" src="../../assets/Logo-Outline.png" height="40px" width="40px" style="margin-left: 15px;">
+                </div>
+                <div class="col-sm-9">
+                  <p style="font-size: smaller;">{{notification.notification}}</p>
+                  <p style="font-size: smaller; float: right;">{{notification.time | date:'medium'}}</p>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>  
+            </div>   
+        </ul>
+        </div> -->
+
+
+      </div>
+
+        
+    </nav>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <div>
+                  <label for="exampleInputEmail1">Previous Password</label>
+                  <input type="password" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Password" required>
+                  <label for="exampleInputEmail1">New Password</label>
+                  <input type="password" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Password" required>
+                  <label for="exampleInputEmail1">Retype new Password</label>
+                  <input type="password" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Password" required>
+                </div>
+                <p style="color: chocolate;">{{message}}</p>
+                
+            </div>
+            <div class="col-sm-2">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Change</button>
+        </div>
+      </div>
+    </div>
+  </div>
