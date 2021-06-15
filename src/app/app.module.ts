@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { SearchJobComponent } from './Components/search-job/search-job.component';
 import { CircularDetailsComponent } from './Components/circular-details/circular-details.component';
+import { ECvComponent } from './Components/e-cv/e-cv.component';
+import { ApplicantsComponent } from './Components/applicants/applicants.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { CircularDetailsComponent } from './Components/circular-details/circular
     PreviousCircularComponent,
     UserDashboardComponent,
     SearchJobComponent,
-    CircularDetailsComponent
+    CircularDetailsComponent,
+    ECvComponent,
+    ApplicantsComponent
   ],
   imports: [
     BrowserModule,

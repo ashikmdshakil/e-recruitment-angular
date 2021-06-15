@@ -1,3 +1,4 @@
+import { createViewChild } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -19,6 +20,10 @@ export class UserDashboardComponent implements OnInit {
 
   searchCircular(){
     this.router.navigateByUrl("/User-Dashboard");
+  }
+
+  showCv(){
+    this.router.navigateByUrl("/User-Dashboard/(pannel:e-cv)");
   }
 
 }

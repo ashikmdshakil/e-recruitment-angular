@@ -9,4 +9,5 @@ export class Circular{
     details: string;
     token: string;
     owner: User;
+    applicants: User[] = [];
 } 

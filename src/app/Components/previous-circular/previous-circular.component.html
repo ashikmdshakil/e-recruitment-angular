@@ -19,7 +19,7 @@
                 <td>{{circular.deadTime | date:'medium'}}</td>
                 <td>{{circular.seats}}</td>
                 <td>{{circular.token}}</td>
-                <td><button type="button" class="btn btn-outline-success">Details</button></td>
+                <td><button type="button" (click)="showApplicants(circular.id)" class="btn btn-outline-success">Details</button></td>
               </tr>
             </tbody>
           </table>

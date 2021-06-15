@@ -11,6 +11,8 @@ import { CreateCircularComponent } from './Components/create-circular/create-cir
 import { SearchJobComponent } from './Components/search-job/search-job.component';
 import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
 import { CircularDetailsComponent } from './Components/circular-details/circular-details.component';
+import { ECvComponent } from './Components/e-cv/e-cv.component';
+import { ApplicantsComponent } from './Components/applicants/applicants.component';
 
 const routes: Routes = [
   {path: "", redirectTo : "E-Recruitment", pathMatch: 'full'},
@@ -34,6 +36,7 @@ const routes: Routes = [
         {path: "create-circular", component : CreateCircularComponent, outlet: 'pannel'},
         {path: "previous-circular", component : PreviousCircularComponent, outlet: 'pannel'},
         {path: "blogs", component : NavbarComponent, outlet: 'pannel'},
+        {path: "applicants/:id", component : ApplicantsComponent, outlet: 'pannel'},
       ]
   },
   {path: "User-Dashboard", component : UserDashboardComponent,
@@ -42,6 +45,7 @@ const routes: Routes = [
         {path: "", component : SearchJobComponent, outlet: 'pannel'},
         {path: "search-circular", component : SearchJobComponent, outlet: 'pannel'},
         {path: "circular/:id", component : CircularDetailsComponent, outlet: 'pannel'},
+        {path: "e-cv", component : ECvComponent, outlet: 'pannel'},
         {path: "previous-circular", component : PreviousCircularComponent, outlet: 'pannel'},
         {path: "blogs", component : NavbarComponent, outlet: 'pannel'},
       ]

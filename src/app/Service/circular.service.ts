@@ -51,4 +51,11 @@ export class CircularService {
       return this.http.get('http://localhost:8080/getCircularById',{headers: headers,params: param})
    }
 
+   applyJob(circular: Circular): Observable<any>{
+    const headers = new HttpHeaders({
+      authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
+  });
+      return this.http.post('http://localhost:8080/applyJob',circular,{headers: headers, responseType: 'text'})
+   }
+
 }
