@@ -5,12 +5,12 @@
         <div class="col-sm-4">
             <h3>Sign In</h3>
             <div class="form-group">
-                <label for="formGroupExampleInput2">Phone Number</label>
-                <input type="email" class="form-control" id="number">
+                <label for="formGroupExampleInput2">Email</label>
+                <input type="email" class="form-control" [(ngModel)] = "email" id="number">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" [(ngModel)] = "password" id="password">
             </div>
             <div>
                 <strong>If you are not signed up please <a routerLink = "/sign-up"><p> Sign Up.</p></a></strong>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <button id = "save" class="btn btn-success">Sign In</button>
+                    <button id = "save" (click)= "signIn()" class="btn btn-success">Sign In</button>
                 </div>
                 <div class="col-sm-4"></div>
             </div>

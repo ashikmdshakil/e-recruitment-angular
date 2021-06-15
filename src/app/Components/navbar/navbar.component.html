@@ -9,7 +9,7 @@
               <img *ngIf="!imageUrl" class="mr-2" class= "picture" src="../../assets/blank_image.png" alt="avatar" style="display: inline-block;">
               <img *ngIf="imageUrl" class="mr-2" class= "picture" [src] = "imageUrl" alt="avatar" style="display: inline-block;">
               <div class="media-body" style="display: inline-block; margin-left: 10px;">
-                  <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Hello Ashik</span>
+                  <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Hello {{username}}</span>
               </div>
               <i class="material-icons md-light ml-2 pmd-sm" style="display: inline-block;"></i>
           </a>

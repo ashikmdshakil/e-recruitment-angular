@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Circular } from 'src/app/Model/Circular.model';
+import { CircularService } from 'src/app/Service/circular.service';
 
 @Component({
   selector: 'app-erecruitment',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErecruitmentComponent implements OnInit {
 
-  constructor() { }
+  circular: Circular = new Circular();
+  circularService: CircularService;
+
+  constructor(circularService: CircularService) {
+    this.circularService = circularService;
+   }
 
   ngOnInit(): void {
+
   }
+
+  
+
 
 }

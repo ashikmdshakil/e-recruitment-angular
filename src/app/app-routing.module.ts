@@ -1,9 +1,16 @@
+import { PreviousCircularComponent } from './Components/previous-circular/previous-circular.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { LoginComponent } from './Components/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErecruitmentComponent } from './Components/erecruitment/erecruitment.component';
+import { OverviewComponent } from './Components/overview/overview.component';
+import { CreateCircularComponent } from './Components/create-circular/create-circular.component';
+import { SearchJobComponent } from './Components/search-job/search-job.component';
+import { UserDashboardComponent } from './Components/user-dashboard/user-dashboard.component';
+import { CircularDetailsComponent } from './Components/circular-details/circular-details.component';
 
 const routes: Routes = [
   {path: "", redirectTo : "E-Recruitment", pathMatch: 'full'},
@@ -15,11 +22,30 @@ const routes: Routes = [
     {path: "", component : LoginComponent, outlet: 'login'},
   ]
 },
-{path: "sign-up", component : SignupComponent,
-children : [
-  {path: "", component : NavbarComponent, outlet: 'nav'},
-]
-},
+  {path: "sign-up", component : SignupComponent,
+    children : [
+        {path: "", component : NavbarComponent, outlet: 'nav'},
+      ]
+  },
+  {path: "Dashboard", component : DashboardComponent,
+    children : [
+        {path: "", component : NavbarComponent, outlet: 'nav'},
+        {path: "", component : OverviewComponent, outlet: 'pannel'},
+        {path: "create-circular", component : CreateCircularComponent, outlet: 'pannel'},
+        {path: "previous-circular", component : PreviousCircularComponent, outlet: 'pannel'},
+        {path: "blogs", component : NavbarComponent, outlet: 'pannel'},
+      ]
+  },
+  {path: "User-Dashboard", component : UserDashboardComponent,
+    children : [
+        {path: "", component : NavbarComponent, outlet: 'nav'},
+        {path: "", component : SearchJobComponent, outlet: 'pannel'},
+        {path: "search-circular", component : SearchJobComponent, outlet: 'pannel'},
+        {path: "circular/:id", component : CircularDetailsComponent, outlet: 'pannel'},
+        {path: "previous-circular", component : PreviousCircularComponent, outlet: 'pannel'},
+        {path: "blogs", component : NavbarComponent, outlet: 'pannel'},
+      ]
+  },
 ]
 
 @NgModule({

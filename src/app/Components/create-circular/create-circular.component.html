@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+        <div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Circular Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)] = "circular.name"  placeholder="Circular name">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Circular Details</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)] = "circular.details"  rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Number of vacancy</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)] = "circular.seats"  placeholder="0">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Dead time</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" [(ngModel)] = "circular.deadTime"  aria-describedby="emailHelp">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <button type="button" (click)="createCircular()" class="btn btn-success">Create Circular</button>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="row" style="margin-top: 25px;">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Circular Token</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)] = "circular.token"  placeholder="Circular token">
+                    </div>
+                    <p style="color: chocolate;"><strong>{{message}}</strong></p>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+

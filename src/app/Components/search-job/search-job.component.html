@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+        <div style="margin-top: 25px;">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Circular Token</label>
+            <input type="text" [(ngModel)] = "token"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="Circular token">
+            <p style="color: chocolate; font-size: smaller;">Write the token digit which you got with the circular.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <td><button type="button" (click) = "search()" class="btn btn-outline-success">Search</button></td>
+                <p style="color: chocolate;"><Strong>{{message}}</Strong></p>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
