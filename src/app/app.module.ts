@@ -20,6 +20,7 @@ import { SearchJobComponent } from './Components/search-job/search-job.component
 import { CircularDetailsComponent } from './Components/circular-details/circular-details.component';
 import { ECvComponent } from './Components/e-cv/e-cv.component';
 import { ApplicantsComponent } from './Components/applicants/applicants.component';
+import { EvalutionComponent } from './Components/evalution/evalution.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ApplicantsComponent } from './Components/applicants/applicants.componen
     SearchJobComponent,
     CircularDetailsComponent,
     ECvComponent,
-    ApplicantsComponent
+    ApplicantsComponent,
+    EvalutionComponent
   ],
   imports: [
     BrowserModule,

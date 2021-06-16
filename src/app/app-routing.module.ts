@@ -13,6 +13,7 @@ import { UserDashboardComponent } from './Components/user-dashboard/user-dashboa
 import { CircularDetailsComponent } from './Components/circular-details/circular-details.component';
 import { ECvComponent } from './Components/e-cv/e-cv.component';
 import { ApplicantsComponent } from './Components/applicants/applicants.component';
+import { EvalutionComponent } from './Components/evalution/evalution.component';
 
 const routes: Routes = [
   {path: "", redirectTo : "E-Recruitment", pathMatch: 'full'},
@@ -50,6 +51,7 @@ const routes: Routes = [
         {path: "blogs", component : NavbarComponent, outlet: 'pannel'},
       ]
   },
+  {path: "evalution/:aId/:cId", component: EvalutionComponent}
 ]
 
 @NgModule({

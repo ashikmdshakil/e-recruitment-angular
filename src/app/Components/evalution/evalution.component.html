@@ -1,0 +1,106 @@
+<div class="row" style="margin-top: 25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>Personal Information</h2>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row" style="margin-top: 25px;margin-bottom: 15px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+        <div>
+            <h4>Name: {{applicant.name}}</h4>
+            <p><strong>{{applicant.email}}</strong></p>
+            <p><strong>{{applicant.mobileNumber}}</strong></p>
+            <p>{{applicant.address}}</p>
+        </div>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+<div class="row" style="margin-top: 25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>Working Experience</h2>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row" style="margin-top: 25px;margin-bottom: 15px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" *ngFor= "let experience of experiences ;">
+        <div>
+            <h4>Institution: {{experience.institutionName}}</h4>
+            <p><strong>Designation: {{experience.designation}}</strong></p>
+            <p>{{experience.location}}</p>
+            <p>Start Time: {{experience.startTime | date:'medium'}}</p>
+            <p>End Time: {{experience.lastTime | date:'medium'}}</p>
+        </div>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>Education Information</h2>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row" style="margin-top: 25px; margin-bottom: 15px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" *ngFor= "let education of educations ;">
+        <div>
+            <h4>{{education.degreeName}}</h4>
+            <p><strong>Institute: {{education.instituteName}}</strong></p>
+            <p>{{education.location}}</p>
+            <p>Start time: {{education.startTime | date:'medium'}}</p>
+            <p>End time: {{education.endTime | date:'medium'}}</p>
+        </div>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+
+<div class="row" style="margin-top: 25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>Certifications</h2>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div class="row" style="margin-top: 25px; margin-bottom: 15px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4" *ngFor= "let certification of certifications ;">
+        <div>
+            <h3>{{certification.name}}</h3>
+            <h4>Institute: {{certification.instituteName}}</h4>
+            <p><strong>Start time: {{certification.startTime | date:'medium'}}</strong></p>
+            <p><strong>End Time:{{certification.endTime | date:'medium'}}</strong></p>
+        </div>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+<div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-7">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comment about applicant</label>
+            <textarea class="form-control" [(ngModel)] = "evalution.comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Mark this applicant</label>
+                <input type="number" class="form-control" [(ngModel)] = "evalution.marks" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 15px; margin-bottom: 25px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <button type="button" (click)="saveEvalution()" class="btn btn-success">Evaluate Applicant</button>
+        <p style="color: chocolate;">{{message}}</p>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

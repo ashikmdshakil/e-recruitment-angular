@@ -40,6 +40,16 @@ export class UserService {
       return this.http.get('http://localhost:8080/getUserByEmail',{headers: headers,params: param})
    }
 
+   getUserById(id: string): Observable<any>{
+    let param = new HttpParams()
+    .set('id' , id);
+
+    const headers = new HttpHeaders({
+      authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
+  });
+      return this.http.get('http://localhost:8080/getUserById',{headers: headers,params: param})
+   }
+
    addExperience(experience: Experience): Observable<any>{
     const headers = new HttpHeaders({
       authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
