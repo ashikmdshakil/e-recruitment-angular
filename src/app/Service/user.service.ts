@@ -108,6 +108,35 @@ export class UserService {
     return this.http.post('http://localhost:8080/updateCV',user,{headers: headers, responseType: "text"});
    }
 
+   getTotalCircular(): Observable<any>{
+    let param = new HttpParams()
+    .set('id',localStorage.getItem('id'));
+
+    const headers = new HttpHeaders({
+      authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
+  });
+      return this.http.get('http://localhost:8080/getTotalCircular',{headers: headers,params: param})
+   }
+
+   getRequestedCircular(): Observable<any>{
+    let param = new HttpParams()
+    .set('id',localStorage.getItem('id'));
+
+    const headers = new HttpHeaders({
+      authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
+  });
+      return this.http.get('http://localhost:8080/getRequestedCircular',{headers: headers,params: param})
+   }
+
+   logout(): Observable<any>{
+    const headers = new HttpHeaders({
+      authorization : 'Basic ' + btoa(localStorage.getItem('username') + ':' + localStorage.getItem('password'))
+  });
+    return this.http.get('http://localhost:8080/logoutUser',{headers: headers, responseType: "text"});
+   }
+
+
+
 
 
 }

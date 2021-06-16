@@ -26,4 +26,8 @@ export class UserDashboardComponent implements OnInit {
     this.router.navigateByUrl("/User-Dashboard/(pannel:e-cv)");
   }
 
+  requestedCircular(){
+    this.router.navigateByUrl("/User-Dashboard/(pannel:requested-circular)");
+  }
+
 }

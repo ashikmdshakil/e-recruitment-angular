@@ -21,6 +21,7 @@ import { CircularDetailsComponent } from './Components/circular-details/circular
 import { ECvComponent } from './Components/e-cv/e-cv.component';
 import { ApplicantsComponent } from './Components/applicants/applicants.component';
 import { EvalutionComponent } from './Components/evalution/evalution.component';
+import { RequestedCircularComponent } from './Components/requested-circular/requested-circular.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EvalutionComponent } from './Components/evalution/evalution.component';
     CircularDetailsComponent,
     ECvComponent,
     ApplicantsComponent,
-    EvalutionComponent
+    EvalutionComponent,
+    RequestedCircularComponent
   ],
   imports: [
     BrowserModule,

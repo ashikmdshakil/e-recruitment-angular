@@ -10,7 +10,7 @@ import { CircularService } from 'src/app/Service/circular.service';
   styleUrls: ['./circular-details.component.css']
 })
 export class CircularDetailsComponent implements OnInit {
-
+  exist: boolean;
   circularId: number;
   route: ActivatedRoute;
   circularService: CircularService;
@@ -34,19 +34,28 @@ export class CircularDetailsComponent implements OnInit {
 
   applyJob(){
     this.user.id = Number(localStorage.getItem("id"));
-    this.circular.applicants.push(this.user);
-    this.circularService.applyJob(this.circular).subscribe(result =>{
-      if(result === 'success'){
-        this.message = "Application is successfull !";
+    this.circular.applicants.forEach(element => {
+      if(element.id === this.user.id){
+        this.message = "You have already applied for this";
+        this.exist = true;
       }
-      else{
-        this.message = "Sorry something went wrong.";
+    });
+
+    if(!this.exist){
+      this.circular.applicants.push(this.user);
+      this.circularService.applyJob(this.circular).subscribe(result =>{
+        if(result === 'success'){
+          this.message = "Application is successfull !";
+        }
+        else{
+          this.message = "Sorry something went wrong.";
+        }
+      },
+      error =>{
+        this.message = "Sorry something went wrong. It might be a connection error.";
       }
-    },
-    error =>{
-      this.message = "Sorry something went wrong. It might be a connection error.";
+      )
     }
-    )
   }
 
 }
